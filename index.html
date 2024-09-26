@@ -1,79 +1,89 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>This is comparing of flags colors </title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Колекція Ручок та Ножів</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <header>
+        <h1>Моя колекція</h1>
+        <nav>
+            <ul>
+                <li><a href="#pens">Ручки</a></li>
+                <li><a href="#knives">Ножі</a></li>
+            </ul>
+        </nav>
+    </header>
 
+    <section id="pens">
+        <h2>Мої ручки</h2>
+        <div class="tabs">
+            <button class="tab-button" onclick="showTab('received-pens')">Отримані</button>
+            <button class="tab-button" onclick="showTab('desired-pens')">Бажані</button>
+        </div>
+        <div id="received-pens" class="tab-content">
+            <h3>Отримані Ручки</h3>
+            <!-- Форма для введення даних про ручки -->
+            <form>
+                <label for="brand">Бренд:</label>
+                <input type="text" id="brand" name="brand"><br>
 
-<canvas id="Ukraine" width="300" height="200" style="border:1px solid #ffffff;">
-</canvas>
-<script>
-var c = document.getElementById("Ukraine");
-var ctx = c.getContext("2d");
-ctx.beginPath();
-ctx.rect(0, 0, 300, 100);
-ctx.fillStyle = "#0057B8";
-ctx.fill();
+                <label for="collection">Колекція:</label>
+                <input type="text" id="collection" name="collection"><br>
 
-ctx.beginPath();
-ctx.rect(0, 100, 300, 100);
-ctx.fillStyle = "#FFD700";
-ctx.fill();
-</script> 
-<br>
-<canvas id="Sweden" width="320" height="200" style="border:1px solid #ffffff ;">
-</canvas>
-<script>
-var c = document.getElementById("Sweden");
-var ctx = c.getContext("2d");
-ctx.beginPath();
-ctx.rect(0, 0, 320, 200);
-ctx.fillStyle = "#006AA7";
-ctx.fill();
+                <label for="pen-type">Тип ручки:</label>
+                <input type="text" id="pen-type" name="pen-type"><br>
 
-ctx.beginPath();
-ctx.rect(100, 0, 40, 200);
-ctx.fillStyle = "#FECC02";
-ctx.fill();
+                <label for="color">Колір:</label>
+                <input type="text" id="color" name="color"><br>
 
-ctx.beginPath();
-ctx.rect(0, 80, 320, 40);
-ctx.fillStyle = "#FECC02";
-ctx.fill();
+                <label for="price">Ціна:</label>
+                <input type="text" id="price" name="price"><br>
 
-</script> 
-<br>
+                <label for="description">Опис:</label>
+                <textarea id="description" name="description"></textarea><br>
 
-<canvas id="Norway" width="330" height="240" style="border:1px solid #ffffff;">
-</canvas>
-<script>
-var c = document.getElementById("Norway");
-var ctx = c.getContext("2d");
-ctx.beginPath();
-ctx.rect(0, 0, 330, 240);
-ctx.fillStyle = "#00205B";
-ctx.fill();
+                <label for="rating">Мій рейтинг:</label>
+                <input type="number" id="rating" name="rating" min="1" max="5"><br>
 
-ctx.beginPath();
-ctx.rect(90, 0, 60, 240);
-ctx.fillStyle = "#FFFFFF";
-ctx.fill();
+                <input type="submit" value="Зберегти">
+            </form>
+        </div>
 
-ctx.beginPath();
-ctx.rect(0, 90, 330, 60);
-ctx.fillStyle = "#FFFFFF";
-ctx.fill();
+        <div id="desired-pens" class="tab-content" style="display: none;">
+            <h3>Бажані Ручки</h3>
+            <!-- Додаткові поля -->
+        </div>
+    </section>
 
-ctx.beginPath();
-ctx.rect(105, 0, 30, 240);
-ctx.fillStyle = "#BA0C2F";
-ctx.fill();
+    <section id="knives">
+        <h2>Мої ножі</h2>
+        <!-- Аналогічна структура для ножів -->
+        <form>
+            <label for="knife-brand">Бренд:</label>
+            <input type="text" id="knife-brand" name="knife-brand"><br>
 
-ctx.beginPath();
-ctx.rect(0, 105, 330, 30);
-ctx.fillStyle = "#BA0C2F";
-ctx.fill();
-</script> 
+            <label for="blade-length">Довжина леза:</label>
+            <input type="text" id="blade-length" name="blade-length"><br>
+
+            <label for="color">Колір:</label>
+            <input type="text" id="knife-color" name="knife-color"><br>
+
+            <label for="price">Ціна:</label>
+            <input type="text" id="knife-price" name="knife-price"><br>
+
+            <label for="knife-description">Опис:</label>
+            <textarea id="knife-description" name="knife-description"></textarea><br>
+
+            <label for="knife-rating">Мій рейтинг:</label>
+            <input type="number" id="knife-rating" name="knife-rating" min="1" max="5"><br>
+
+            <input type="submit" value="Зберегти">
+        </form>
+    </section>
+
+    <script src="script.js"></script>
 </body>
 </html>
